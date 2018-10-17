@@ -35,7 +35,7 @@ function BBCode_DailyMotion(&$bbc)
 			'frameborder' => array('match' => '(\d+)'),
 		),
 		'validate' => 'BBCode_DailyMotion_Validate',
-		'content' => '0|0|{frameborder}',
+		'content' => '0|{frameborder}',
 		'disabled_content' => '$1',
 	);
 
@@ -44,7 +44,7 @@ function BBCode_DailyMotion(&$bbc)
 		'tag' => 'dailymotion',
 		'type' => 'unparsed_content',
 		'validate' => 'BBCode_DailyMotion_Validate',
-		'content' => '0|0|0',
+		'content' => '0|0',
 		'disabled_content' => '$1',
 	);
 }
@@ -69,16 +69,16 @@ function BBCode_DailyMotion_Validate(&$tag, &$data, &$disabled)
 	$data = strtr(trim($data), array('<br />' => ''));
 	if (strpos($data, 'http://') !== 0 && strpos($data, 'https://') !== 0)
 		$data = 'http://' . $data;
-	$pattern = '#(http|https)://(|(.+?).)DailyMotion.com/(\d+)#i';
+	$pattern = '#(http|https)://(|(.+?).)dailymotion.com/(embed/video|video)/([\w\d]+)#i';
 	if (!preg_match($pattern, $data, $parts))
 		return ($tag['content'] = $txt['DailyMotion_no_post_id']);
-	$data = $parts[4];
+	$data = $parts[5];
 
 	list($width, $frameborder) = explode('|', $tag['content']);
 	if (empty($width))
 		$width = !empty($modSettings['DailyMotion_default_width']) ? $modSettings['DailyMotion_default_width'] : false;
 	$tag['content'] = '<div style="max-width: ' . (empty($width) ? '100%;' : $width . 'px;') . '"><div class="DailyMotion-wrapper">' .
-		'<iframe src="https://player.dailymotion.com/video/' . $data .'?title=0&byline=0&portrait=0&badge=0" scrolling="no" frameborder="' . $frameborder . '"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></div>';
+		'<iframe src="http://www.dailymotion.com/embed/video/' . $data .'?api=true&autoplay=1" scrolling="no" frameborder="' . $frameborder . '"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></div>';
 }
 
 function BBCode_DailyMotion_LoadTheme()
@@ -99,7 +99,7 @@ function BBCode_DailyMotion_Embed(&$message, &$smileys, &$cache_id, &$parse_tags
 	if ($message === false)
 		return;
 	$replace = (strpos($cache_id, 'sig') !== false ? '[url]$0[/url]' : '[dailymotion]$0[/dailymotion]');
-	$pattern = '~(?<=[\s>\.(;\'"]|^)(http|https)://(|(.+?).)DailyMotion.com/video/([\w\d\-\_\%])+\??[/\w\-_\~%@\?;=#}\\\\]?~';
+	$pattern = '~(?<=[\s>\.(;\'"]|^)(http|https)://(|(.+?).)dailymotion.com/(embed/video|video)/([\w\d]+)\??[/\w\-_\~%@\?;=#}\\\\]?~';
 	$message = preg_replace($pattern, $replace, $message);
 	if (strpos($cache_id, 'sig') !== false)
 		$message = preg_replace('#\[dailymotion.*\](.*)\[\/dailymotion\]#i', '[url]$1[/url]', $message);

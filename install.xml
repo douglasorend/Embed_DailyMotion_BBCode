@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <!DOCTYPE modification SYSTEM "http://www.simplemachines.org/xml/modification">
 <modification xmlns="http://www.simplemachines.org/xml/modification" xmlns:smf="http://www.simplemachines.org/">
-<id>Dougiefresh:Vimeo</id>
-<name>Embed Vimeo Videos BBCode</name>
+<id>Dougiefresh:DailyMotion</id>
+<name>Embed DailyMotion Videos BBCode</name>
 <version>1.4</version>
 
 <file name="$sourcedir/Post.php">
@@ -18,8 +18,8 @@
 <file name="$sourcedir/Subs.php">
 	<operation>
 		<search position="after"><![CDATA[// The non-breaking-space looks a bit different each time.]]></search>
-		<add><![CDATA[// Embed Vimeo URLs in the Vimeo bbcode tags:
-	BBCode_Vimeo_Embed($message, $smileys, $cache_id, $parse_tags);
+		<add><![CDATA[// Embed DailyMotion URLs in the DailyMotion bbcode tags:
+	BBCode_DailyMotion_Embed($message, $smileys, $cache_id, $parse_tags);
 
 	]]></add>
 	</operation>
@@ -37,8 +37,8 @@
 <file name="$boarddir/mobiquo/include/Subs.php" error="skip">
 	<operation>
 		<search position="after"><![CDATA[// The non-breaking-space looks a bit different each time.]]></search>
-		<add><![CDATA[// Embed Vimeo URLs in the Vimeo bbcode tags:
-	BBCode_Vimeo_Embed($message, $smileys, $cache_id, $parse_tags);
+		<add><![CDATA[// Embed DailyMotion URLs in the DailyMotion bbcode tags:
+	BBCode_DailyMotion_Embed($message, $smileys, $cache_id, $parse_tags);
 
 	]]></add>
 	</operation>
