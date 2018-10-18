@@ -1,2 +1,5 @@
+v1.0.1 - October 17th, 2018
+o Fixed HTML video sizing issue.
+
 v1.0 - October 17th, 2018
 o Initial Public Release

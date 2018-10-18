@@ -78,7 +78,7 @@ function BBCode_DailyMotion_Validate(&$tag, &$data, &$disabled)
 	if (empty($width))
 		$width = !empty($modSettings['DailyMotion_default_width']) ? $modSettings['DailyMotion_default_width'] : false;
 	$tag['content'] = '<div style="max-width: ' . (empty($width) ? '100%;' : $width . 'px;') . '"><div class="DailyMotion-wrapper">' .
-		'<iframe src="http://www.dailymotion.com/embed/video/' . $data .'?api=true&autoplay=1" scrolling="no" frameborder="' . $frameborder . '"  frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></div>';
+		'<iframe src="http://www.dailymotion.com/embed/video/' . $data .'?api=true" scrolling="no" frameborder="' . $frameborder . '" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div></div>';
 }
 
 function BBCode_DailyMotion_LoadTheme()

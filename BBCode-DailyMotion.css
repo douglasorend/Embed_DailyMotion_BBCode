@@ -1,6 +1,6 @@
-/* Styles for the Embed vimeo Video Mod */
+/* Styles for the Embed DailyMotion Video Mod */
 
-.vimeo-wrapper
+.DailyMotion-wrapper
 {
 	height: 0;
 	padding-top: 0px;
@@ -10,7 +10,7 @@
 	background-color: #ffffff;
 }
 
-.vimeo-wrapper div, .vimeo-wrapper iframe
+.DailyMotion-wrapper div, .DailyMotion-wrapper iframe
 {
 	top: 0;
 	left: 0;
