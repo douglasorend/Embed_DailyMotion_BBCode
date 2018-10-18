@@ -11,7 +11,7 @@ This modification adds a BBCode to view DailyMotion videos.
 
 The BBCode takes this form:
     
-    [DailyMotion width=x]{DailyMotion URL}[/DailyMotion]
+    [dailymotion width=x]{DailyMotion URL}[/dailymotion]
     
 ## Admin Settings
 There are a new setting on the **Modifications Settings** page:
