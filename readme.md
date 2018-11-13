@@ -1,6 +1,6 @@
 ----------
 
-# EMBED DAILYMOTION VIDEO BBCODE v1.0.1
+# EMBED DAILYMOTION VIDEO BBCODE v1.1
 
 [**By Dougiefresh**](http://www.simplemachines.org/community/index.php?action=profile;u=253913) -> [Link to Mod](http://custom.simplemachines.org/mods/index.php?mod=4195)
 

@@ -1,3 +1,6 @@
+v1.1 - November 12th, 2018
+o Changed the bbcode button icon to proper DailyMotion icon.
+
 v1.0.1 - October 17th, 2018
 o Fixed HTML video sizing issue.
 
